@@ -9,23 +9,30 @@
                 <th>Password</th>
                 <th>Email</th>
                 <th>Fullname</th>
+                <th>Status</th>
                 <th>Date Created</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach($users as $user): ?>
+            <?php foreach ($users as $user): ?>
             <tr>
                 <td><?= $user->id; ?></td>
                 <td><?= $user->username; ?></td>
                 <td><?= $user->password; ?></td>
                 <td><?= $user->email; ?></td>
                 <td><?= $user->fullname; ?></td>
+                <td><?= ucfirst($user->status); ?></td>
                 <td><?= $user->datecreated; ?></td>
                 <td>
                     <a href="<?= base_url('users/view/'.$user->id); ?>" class="btn btn-sm btn-warning">View</a>
                     <a href="<?= base_url('users/edit/'.$user->id); ?>" class="btn btn-sm btn-secondary">Edit</a>
                     <a href="<?= base_url('users/delete/'.$user->id); ?>" class="btn btn-sm btn-danger">Delete</a>
+                    <?php if ($user->status === 'active'): ?>
+                        <a href="<?= base_url('users/deactivate/'.$user->id); ?>" class="btn btn-sm btn-dark">Deactivate</a>
+                    <?php else: ?>
+                        <span class="badge badge-secondary">Deactivated</span>
+                    <?php endif; ?>
                 </td>
             </tr>
             <?php endforeach; ?>

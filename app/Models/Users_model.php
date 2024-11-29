@@ -14,7 +14,8 @@ class Users_model extends Model{
         'password',
         'email',
         'fullname',
-        'datecreated'
+        'datecreated',
+        'status'
     ];
 }
 ?>
