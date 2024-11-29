@@ -43,7 +43,7 @@
             </tbody>
         </table>
     </div>
-    <a href="<?= base_url(); ?>" class="btn">Back to Home</a>
+    <a href="<?= base_url("home"); ?>" class="btn">Back to Home</a>
 </div>
 
 <style>

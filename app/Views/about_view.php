@@ -3,7 +3,7 @@
     <p>
         I am a passionate individual who thrives on innovation and futuristic ideas. With a deep understanding of technology and a vision to create new solutions, I continually push the boundaries of what’s possible. My interests span across cutting-edge tech, from AI advancements to the latest trends in UI/UX design.
     </p>
-    <a href="<?= base_url(); ?>" class="btn">Back to Home</a>
+    <a href="<?= base_url("home"); ?>" class="btn">Back to Home</a>
 </div>
 
 <style>
