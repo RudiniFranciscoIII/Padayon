@@ -40,3 +40,7 @@ $routes->post('index/login', 'Index::login');
 
 //deactivate
 $routes->get('users/deactivate/(:num)', 'Users::deactivate/$1');
+
+//logout
+$routes->get('index/logout', 'Index::logout');
+

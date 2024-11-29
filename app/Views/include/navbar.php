@@ -33,6 +33,10 @@
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="background-color: #252733; color: #eaeaea; border: 1px solid #c0c0c0; border-radius: 8px;">
                 <button class="btn btn-custom" type="submit" style="background-color: #0b8793; color: white; border-radius: 30px;">Search</button>
             </form>
+            <!-- Add the logout link -->
+            <a href="<?= base_url('index/logout'); ?>" class="btn btn-custom" style="background-color: #f44336; color: white; border-radius: 30px; margin-left: 15px;">
+                Logout
+            </a>
         </div>
     </div>
 </nav>

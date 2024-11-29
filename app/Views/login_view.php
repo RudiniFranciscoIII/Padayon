@@ -21,6 +21,9 @@
     <div class="button-column">
         <a href="<?= base_url('users/add'); ?>" class="btn btn-link">Click here to register</a>
     </div>
+
+    
+
 </div>
 
 

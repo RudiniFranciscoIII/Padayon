@@ -74,6 +74,18 @@ class Index extends BaseController
         echo "</pre>";
         die();
     }
+
+
+
+    public function logout()
+    {
+        // Destroy the session data
+        session()->destroy();
+
+        // Redirect to the login page
+        return redirect()->to('index/login');
+    }
+
 }
 ?>
     
