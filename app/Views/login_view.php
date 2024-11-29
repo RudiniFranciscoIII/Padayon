@@ -1,5 +1,10 @@
 <div class="user-list-container">
     <h3>Log In</h3>
+    <?php if (session()->getFlashdata('error')): ?>
+        <div class="alert alert-danger">
+            <?= session()->getFlashdata('error'); ?>
+        </div>
+    <?php endif; ?>
     <form action="<?= base_url('index/login'); ?>" method="post">
         <div class="form-group mb-3">
             <label for="username" class="form-label">Username</label>
@@ -17,6 +22,8 @@
         <a href="<?= base_url('users/add'); ?>" class="btn btn-link">Click here to register</a>
     </div>
 </div>
+
+
 
 <style>
     .user-list-container {

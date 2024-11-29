@@ -36,3 +36,7 @@ $routes->get('products/delete/(:num)', 'Products::delete/$1');
 // For Login
 $routes->get('index/login', 'Index::login');
 $routes->post('index/login', 'Index::login');
+
+
+//deactivate
+$routes->get('users/deactivate/(:num)', 'Users::deactivate/$1');

@@ -30,6 +30,7 @@ class Index extends BaseController{
     public function login(){
         // Check if submit button is clicked
         if($this->request->is('POST')){
+            
             // Load model
             $usersmodel = model('Users_model');
             // Retrieve data from form
@@ -38,12 +39,16 @@ class Index extends BaseController{
             $user  = $usersmodel->where('username', $logindata['username'])
                 ->where('password', $logindata['password'])
                 ->first();
+                if ($user['status'] === 'deactivated') {
+                    return redirect()->back()->with('error', 'Your account is deactivated. Please contact the administrator.');
+                }
             if(!$user){ // If there is no user found with the credentials
                 // Code when user is not found
             }else{
                 // Redirects to home page if log in was successful
                 return redirect()->to('home');
             }
+            
         }
 
 
