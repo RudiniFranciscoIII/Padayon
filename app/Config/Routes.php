@@ -7,7 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 // $routes->get('/', 'Home::index');
 
-$routes->get('/','Index::login');
+$routes->get('/','Index::main');
 $routes->get('index','Index::login');
 //$routes->get('index/index','Index::index');
 $routes->get('home','Index::index');
@@ -44,3 +44,7 @@ $routes->get('users/deactivate/(:num)', 'Users::deactivate/$1');
 //logout
 $routes->get('index/logout', 'Index::logout');
 
+$routes->get('main', 'Index::main'); // Home page
+$routes->get('itso/login', 'Index::login'); // ITSO Personnel login
+$routes->get('student', 'StudentController::index'); // Student page
+$routes->get('associate', 'AssociateController::index'); // Associate page

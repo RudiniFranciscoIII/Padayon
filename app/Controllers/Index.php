@@ -15,6 +15,16 @@ class Index extends BaseController
             .view('include\footer');
     }
 
+    public function main() {
+        $data['title'] = "Home";
+    
+        return view('include\header', $data)
+            .view('include\navbar')
+            .view('main')
+            .view('include\footer');
+    }
+    
+
     public function about()
     {
         $data['title'] = "About Me";
