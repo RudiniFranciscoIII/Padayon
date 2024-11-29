@@ -32,6 +32,8 @@ $routes->get('products/view/(:num)', 'Products::view/$1');
 $routes->get('products/edit/(:num)', 'Products::edit/$1');
 $routes->post('products/edit/(:num)', 'Products::edit/$1');
 $routes->get('products/delete/(:num)', 'Products::delete/$1');
+$routes->get('products/deactivate/(:num)', 'Products::deactivate/$1');
+
 
 // For Login
 $routes->get('index/login', 'Index::login');

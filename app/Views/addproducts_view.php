@@ -5,47 +5,55 @@
             <form action="<?= base_url('products/add'); ?>" method="post">
                 <div class="form-group mb-2">
                     <label for="barcode" class="form-label">Barcode</label>
-                    <input type="text" name="barcode" id="barcode" class="form-control">
+                    <input type="text" name="barcode" id="barcode" class="form-control" required>
                 </div>
 
                 <div class="form-group mb-2">
-                    <label for="productname" class="form-label">Product Name</label>
-                    <input type="text" name="productname" id="productname" class="form-control">
+                    <label for="productname" class="form-label">Equipment</label>
+                    <select name="productname" id="productname" class="form-control" required>
+                        <option value="" disabled selected></option>
+                        <option value="Laptop (with Charger)">Laptop (with Charger)</option>
+                        <option value="DLP (with Extension Cord, VGA/HDMI Cable, and Power Cable)">DLP (with Extension Cord, VGA/HDMI Cable, and Power Cable)</option>
+                        <option value="HDMI Cable">HDMI Cable</option>
+                        <option value="VGA Cable">VGA Cable</option>
+                        <option value="DLP Remote Control">DLP Remote Control</option>
+                        <option value="Keyboard and Mouse (with Lightning Cable) for Mac Lab">Keyboard and Mouse (with Lightning Cable) for Mac Lab</option>
+                        <option value="Wacom Drawing Tablet (with Pen)">Wacom Drawing Tablet (with Pen)</option>
+                        <option value="Speaker Set">Speaker Set</option>
+                        <option value="Webcam">Webcam</option>
+                        <option value="Extension Cord">Extension Cord</option>
+                        <option value="Cable Crimping Tool">Cable Crimping Tool</option>
+                        <option value="Cable Tester">Cable Tester</option>
+                        <option value="Lab Room Key">Lab Room Key</option>
+                    </select>
                 </div>
 
                 <div class="form-group mb-2">
-                    <label for="description" class="form-label">Description</label>
-                    <input type="text" name="description" id="description" class="form-control">
+                    <label for="description" class="form-label">Room No.</label>
+                    <select name="description" id="description" class="form-control" required>
+                        <option value="" disabled selected></option>
+                        <option value="1201">Room No. 1201</option>
+                        <option value="1202">Room No. 1202</option>
+                        <option value="1203">Room No. 1203</option>
+                        <option value="1204">Room No. 1204 (Networking Laboratory)</option>
+                        <option value="1205">Room No. 1205</option>
+                        <option value="1206">Room No. 1206</option>
+                        <option value="1207">Room No. 1207</option>
+                        <option value="1208">Room No. 1208</option>
+                        <option value="1209">Room No. 1209 (Mac Lab)</option>
+                        <option value="1210">Room No. 1210</option>
+                        <option value="1211">Room No. 1211</option>
+                    </select>
                 </div>
 
                 <div class="form-group mb-2">
                     <label for="unit" class="form-label">Unit</label>
-                    <input type="text" name="unit" id="unit" class="form-control">
+                    <input type="text" name="unit" id="unit" class="form-control" required>
                 </div>
 
                 <div class="form-group mb-2">
-                    <label for="purchaseprice" class="form-label">Purchase Price</label>
-                    <input type="text" name="purchaseprice" id="purchaseprice" class="form-control">
-                </div>
-
-                <div class="form-group mb-2">
-                    <label for="sellingprice" class="form-label">Selling Price</label>
-                    <input type="text" name="sellingprice" id="sellingprice" class="form-control">
-                </div>
-
-                <div class="form-group mb-2">
-                    <label for="wholesaleprice" class="form-label">Wholesale Price</label>
-                    <input type="text" name="wholesaleprice" id="wholesaleprice" class="form-control">
-                </div>
-
-                <div class="form-group mb-2">
-                    <label for="deliverydate" class="form-label">Delivery Date</label>
-                    <input type="date" name="deliverydate" id="deliverydate" class="form-control">
-                </div>
-
-                <div class="form-group mb-2">
-                    <label for="supplier" class="form-label">Supplier</label>
-                    <input type="text" name="supplier" id="supplier" class="form-control">
+                    <label for="Reservationdate" class="form-label">Reservation Date</label>
+                    <input type="date" name="Reservationdate" id="Reservationdate" class="form-control" required>
                 </div>
 
                 <div class="form-group">
@@ -56,6 +64,7 @@
         </div>
     </div>
 </div>
+
 
 <style>
     .product-form-container {

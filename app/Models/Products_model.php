@@ -14,11 +14,8 @@ class Products_model extends Model{
         'productname',
         'description',
         'unit',
-        'purchaseprice',
-        'sellingprice',
-        'wholesaleprice',
-        'deliverydate',
-        'supplier',
+        'status',
+        'Reservationdate',
         'dateencoded'
     ];
 }

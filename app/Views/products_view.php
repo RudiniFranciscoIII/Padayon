@@ -10,11 +10,7 @@
                     <th>Product Name</th>
                     <th>Description</th>
                     <th>Unit</th>
-                    <th>Purchase Price</th>
-                    <th>Selling Price</th>
-                    <th>Wholesale Price</th>
-                    <th>Delivery Date</th>
-                    <th>Supplier</th>
+                    <th>Reservation Date</th>
                     <th>Date Encoded</th>
                     <th>Actions</th>
                 </tr>
@@ -27,16 +23,25 @@
                     <td><?= $product->productname; ?></td>
                     <td><?= $product->description; ?></td>
                     <td><?= $product->unit; ?></td>
-                    <td><?= $product->purchaseprice; ?></td>
-                    <td><?= $product->sellingprice; ?></td>
-                    <td><?= $product->wholesaleprice; ?></td>
-                    <td><?= $product->deliverydate; ?></td>
-                    <td><?= $product->supplier; ?></td>
+                    <td><?= $product->Reservationdate; ?></td>
                     <td><?= $product->dateencoded; ?></td>
                     <td>
                         <a href="<?= base_url('products/view/'.$product->id); ?>" class="btn btn-sm btn-warning">View</a>
                         <a href="<?= base_url('products/edit/'.$product->id); ?>" class="btn btn-sm btn-secondary">Edit</a>
-                        <a href="<?= base_url('products/delete/'.$product->id); ?>" class="btn btn-sm btn-danger">Delete</a>
+
+                        <!-- Delete Button with Confirmation -->
+                        <a href="<?= base_url('products/delete/'.$product->id); ?>" 
+                           onclick="return confirm('Are you sure you want to delete this item?');" 
+                           class="btn btn-sm btn-danger">Delete</a>
+
+                        <!-- Deactivate Button with Confirmation -->
+                        <?php if ($product->status === 'active'): ?>
+                            <a href="<?= base_url('products/deactivate/'.$product->id); ?>" 
+                               onclick="return confirm('Are you sure you want to deactivate this item?');" 
+                               class="btn btn-sm btn-dark">Deactivate</a>
+                        <?php else: ?>
+                            <span class="badge badge-secondary">Deactivated</span>
+                        <?php endif; ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>
@@ -46,18 +51,19 @@
     <a href="<?= base_url("home"); ?>" class="btn">Back to Home</a>
 </div>
 
+<!-- Custom Styles -->
 <style>
     .product-list-container {
         background: rgba(255, 255, 255, 0.05);
         border-radius: 15px;
         padding: 30px;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-        max-width: 1920px; /* Set a max width for the container */
+        max-width: 1920px;
         width: 100%;
         text-align: center;
-        margin: 50px auto; /* Center the container */
+        margin: 50px auto;
         transition: transform 0.3s ease;
-        backdrop-filter: blur(10px); /* Adds a futuristic glass effect */
+        backdrop-filter: blur(10px);
     }
 
     .product-list-container:hover {
@@ -67,51 +73,50 @@
     h3 {
         font-size: 36px;
         margin-bottom: 20px;
-        color: #f0f0f0; /* Title color */
+        color: #f0f0f0;
         font-weight: 700;
         text-transform: uppercase;
         letter-spacing: 3px;
-        border-bottom: 2px solid #f0f0f0; /* Underline for title */
+        border-bottom: 2px solid #f0f0f0;
         padding-bottom: 10px;
     }
 
     .table-responsive {
-        overflow-x: auto; /* Enables horizontal scrolling */
-        margin-top: 20px; /* Adds spacing above the table */
+        overflow-x: auto;
+        margin-top: 20px;
     }
 
     table {
         width: 100%;
         border-collapse: collapse;
-        color: #eaeaea; /* Table text color */
+        color: #eaeaea;
     }
 
     th, td {
         padding: 12px 15px;
         text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Darker border color */
-        color: #c0c0c0; /* Cell text color */
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        color: #c0c0c0;
     }
 
     th {
         text-transform: uppercase;
         letter-spacing: 1px;
-        color: #f0f0f0; /* Header text color */
+        color: #f0f0f0;
     }
 
-    /* Button Styling */
     .btn {
         display: inline-block;
         padding: 12px 25px;
-        background-color: #0b8793; /* Consistent button color */
-        color: #fff; /* Button text color */
+        background-color: #0b8793;
+        color: #fff;
         font-size: 16px;
         text-decoration: none;
         text-transform: uppercase;
         border-radius: 30px;
         transition: background-color 0.3s ease, box-shadow 0.3s ease;
         box-shadow: 0 4px 10px rgba(11, 135, 147, 0.5);
-        margin: 10px 0; /* Adds spacing between buttons */
+        margin: 10px 0;
     }
 
     .btn:hover {
@@ -125,45 +130,47 @@
         border-radius: 20px;
     }
 
-    /* Leave existing button colors */
     .btn-warning {
         background-color: #ffc107;
-        color: #212529; /* Text color for warning button */
+        color: #212529;
     }
 
     .btn-secondary {
         background-color: #6c757d;
-        color: #fff; /* Text color for secondary button */
+        color: #fff;
     }
 
     .btn-danger {
         background-color: #dc3545;
-        color: #fff; /* Text color for danger button */
+        color: #fff;
     }
 
-    /* Body Background */
+    .btn-dark {
+        background-color: #343a40;
+        color: #fff;
+    }
+
     body {
         font-family: 'Arial', sans-serif;
         margin: 0;
         padding: 0;
-        background-color: #1d1f27; /* Overall body background */
-        color: #eaeaea; /* Default text color */
+        background-color: #1d1f27;
+        color: #eaeaea;
         display: flex;
         justify-content: center;
         align-items: flex-start;
         min-height: 100vh;
     }
 
-    /* Responsive Design */
     @media only screen and (max-width: 768px) {
         h3 {
-            font-size: 28px; /* Smaller title font size for mobile */
+            font-size: 28px;
         }
         table {
-            font-size: 14px; /* Smaller table font size for mobile */
+            font-size: 14px;
         }
         .product-list-container {
-            padding: 20px; /* Smaller padding for mobile */
+            padding: 20px;
         }
     }
 </style>
