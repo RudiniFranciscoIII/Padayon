@@ -48,7 +48,6 @@ $routes->get('index/logout', 'Index::logout');
 $routes->get('main', 'Index::main'); // Home page
 $routes->get('itso/login', 'Index::login'); // ITSO Personnel login
 $routes->get('student/login', 'Students::add'); // Student page
-$routes->get('associate', 'AssociateController::index'); // Associate page
-
+$routes->get('associate', 'AssociateController::index'); // Associate pag
 
 //student
