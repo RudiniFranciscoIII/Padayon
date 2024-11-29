@@ -2,7 +2,7 @@
     <h1>Welcome to ITSO Management System</h1>
     <div class="button-group">
         <a href="<?= base_url('itso/login'); ?>" class="btn btn-lg btn-primary">ITSO Personnel</a>
-        <a href="<?= base_url('student'); ?>" class="btn btn-lg btn-secondary">Student</a>
+        <a href="<?= base_url('student'); ?>" class="btn btn-secondary">Student</a>
         <a href="<?= base_url('associate'); ?>" class="btn btn-lg btn-success">Associate</a>
     </div>
 </div>
